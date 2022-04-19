@@ -19,6 +19,9 @@ import model.Patient;
 import model.Secretaire;
 import model.Visite;
 
+
+/*Tire-moi tout Ã§a Romain !*/ 
+
 public class Test {
 
 	static LinkedList<Patient> fileAttente = new LinkedList();
@@ -117,9 +120,9 @@ public class Test {
 
 	public static void menuSecretaire() 
 	{
-		System.out.println("\n*******Menu Secrétaire*******");
+		System.out.println("\n*******Menu Secrï¿½taire*******");
 	//	System.out.println("1- Creer un patient");
-		System.out.println("1- Ajouter un patient à la file d'attente");
+		System.out.println("1- Ajouter un patient ï¿½ la file d'attente");
 		System.out.println("2- Afficher la file d'attente");
 		System.out.println("3- Partir en pause");
 		System.out.println("4- Rechercher toutes les visites d'un patient");
@@ -144,14 +147,14 @@ public class Test {
 		Patient p = daoPatient.findById(id);
 		if(p==null) 
 		{
-			System.out.println("Le patient n'a jamais été enregistré");
+			System.out.println("Le patient n'a jamais ï¿½tï¿½ enregistrï¿½");
 
 			String nom = saisieString("Saisir le nom du patient");
 			String prenom = saisieString("Saisir le prenom du patient");
 
 			p = new Patient(id,nom, prenom);
 
-			// ajoute à la BDD
+			// ajoute ï¿½ la BDD
 			daoPatient.insert(p);
 		}
 		
@@ -161,14 +164,14 @@ public class Test {
 
 	public static void creerPatient() 
 	{
-		System.out.println("Le patient n'a jamais été enregistré");
+		System.out.println("Le patient n'a jamais ï¿½tï¿½ enregistrï¿½");
 
 		String nom = saisieString("Saisir le nom du patient");
 		String prenom = saisieString("Saisir le prenom du patient");
 
 		Patient p = new Patient(nom, prenom);
 
-		// ajoute à la BDD
+		// ajoute ï¿½ la BDD
 		daoPatient.insert(p);
 	}
 
@@ -197,7 +200,7 @@ public class Test {
 	{
 		if(fileAttente.isEmpty())
 		{
-			System.out.println("Aucun patient à la file d'attente");
+			System.out.println("Aucun patient ï¿½ la file d'attente");
 		}
 		for(Patient p  : fileAttente) 
 		{
@@ -209,7 +212,7 @@ public class Test {
 
 	public static void partirPause() 
 	{
-		// se déconnecter -> appeler la menu seConnecter
+		// se dï¿½connecter -> appeler la menu seConnecter
 		ecrireObjet();
 		System.out.println("Pause, nous revenons bientot");
 		menuPrincipal();
@@ -231,7 +234,7 @@ public class Test {
 
 	public static void menuMedecin() 
 	{
-		System.out.println("\n~~~~~~~Menu Médecin~~~~~~~");
+		System.out.println("\n~~~~~~~Menu Mï¿½decin~~~~~~~");
 		System.out.println("1- Afficher la liste d'attente");
 		System.out.println("2- Recevoir un Patient");
 		System.out.println("3- Sauvegarder Visite");
@@ -254,7 +257,7 @@ public class Test {
 	{	
 		if(fileAttente.isEmpty()) 
 		{
-			System.out.println("La liste est vide, aucun patient à recevoir");
+			System.out.println("La liste est vide, aucun patient ï¿½ recevoir");
 			menuMedecin();
 		}	
 		System.out.println("Reception du patient : "+ fileAttente.peekFirst());
@@ -279,16 +282,16 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		// Menu se connecter (qui détermine si médecin / secrétaire)
+		// Menu se connecter (qui dï¿½termine si mï¿½decin / secrï¿½taire)
 
 
 		// une fois connecter:
-		// si medecin emmène vers menu médecin
-		// si secrétaire emmène vers menu secrétaire
+		// si medecin emmï¿½ne vers menu mï¿½decin
+		// si secrï¿½taire emmï¿½ne vers menu secrï¿½taire
 
 
 
-		// Menu médecin
+		// Menu mï¿½decin
 		// recevoirPatient
 		// voir fileAttente
 		// sauveVisite()
@@ -296,11 +299,11 @@ public class Test {
 		// -> envoie dans la base (DAO) et on reset la liste
 
 
-		// Menu secrétaire
+		// Menu secrï¿½taire
 		// creerPatient
-		// ajouter à la file d'attente le patient
+		// ajouter ï¿½ la file d'attente le patient
 		// afficher la file d'attente
-		// Partie en pause (se déconnecter)
+		// Partie en pause (se dï¿½connecter)
 
 
 
